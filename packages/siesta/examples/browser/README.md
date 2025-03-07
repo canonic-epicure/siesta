@@ -66,7 +66,7 @@ If you are just starting with Siesta, please consult this guide:
 Github repo
 ===========
 
-https://github.com/bryntum/siesta
+https://github.com/canonic-epicure/siesta
 
 
 Connect
@@ -74,13 +74,9 @@ Connect
 
 We welcome all feedback - please tell us what works well in Siesta, what causes trouble and what any other features you would like to see implemented.
 
-Please report any found bugs in the [issues tracker](https://github.com/bryntum/siesta/issues)
-
-Ask questions in the [forum](https://bryntum.com/forum/viewforum.php?f=20)
+Please report any found bugs in the [issues tracker](https://github.com/canonic-epicure/siesta/issues)
 
 Chat live at [Discord](https://discord.gg/6mwJZGnwbq)
-
-Follow the [development blog](https://www.bryntum.com/blog/)
 
 
 COPYRIGHT AND LICENSE
@@ -88,4 +84,4 @@ COPYRIGHT AND LICENSE
 
 MIT License
 
-Copyright (c) 2009-2021 Bryntum, Nickolay Platonov
+Copyright (c) 2020-2025 Nickolay Platonov

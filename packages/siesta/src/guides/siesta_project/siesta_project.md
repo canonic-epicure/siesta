@@ -155,4 +155,4 @@ COPYRIGHT AND LICENSE
 
 MIT License
 
-Copyright (c) 2009-2021 Bryntum, Nickolay Platonov
+Copyright (c) 2020-2025 Nickolay Platonov
