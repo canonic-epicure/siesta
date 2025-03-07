@@ -6,8 +6,7 @@
 
 <a href="https://www.npmjs.com/package/@bryntum/siesta"><img alt="link to npm package" src="https://img.shields.io/npm/v/@bryntum/siesta"></a>
 
-Siesta is a stress-free, ubiquitous & open-source JavaScript/TypeScript testing tool 
-developed by [Bryntum](https://www.bryntum.com/) since 2009.
+Siesta is a stress-free, ubiquitous & open-source JavaScript/TypeScript testing tool.
 
 Version 6 is a complete rewrite, using a modern technology stack and a decade of test driven development experience.
 
@@ -19,8 +18,6 @@ appropriate one
 - Supports parallel execution
 - Supports native simulation of user actions, like clicking, typing etc. 
 - Provides accurate and well-formatted deep diff for equality assertion
-
-Siesta powers the test suites of all [Bryntum products](https://www.bryntum.com) and thousands of our clients. 
 
 
 Supported environments
@@ -116,13 +113,13 @@ Documentation
 
 Please start reading from one the following guides, corresponding to the environment, in which you'd like to run the tests:
 
-[Getting started with Siesta in Node.js environment](https://bryntum.github.io/siesta/docs/modules/Guide__Getting_started_Node_js.html)
+[Getting started with Siesta in Node.js environment](https://canonic-epicure.github.io/siesta/docs/modules/Guide__Getting_started_Node_js.html)
 
-[Getting started with Siesta in Deno environment](https://bryntum.github.io/siesta/docs/modules/Guide__Getting_started_Deno.html)
+[Getting started with Siesta in Deno environment](https://canonic-epicure.github.io/siesta/docs/modules/Guide__Getting_started_Deno.html)
 
-[Getting started with Siesta in browser environment](https://bryntum.github.io/siesta/docs/modules/Guide__Getting_started_browser.html)
+[Getting started with Siesta in browser environment](https://canonic-epicure.github.io/siesta/docs/modules/Guide__Getting_started_browser.html)
 
-[Getting started with Siesta in Sencha framework environment](https://bryntum.github.io/siesta/docs/modules/Guide__Getting_started_Sencha.html)
+[Getting started with Siesta in Sencha framework environment](https://canonic-epicure.github.io/siesta/docs/modules/Guide__Getting_started_Sencha.html)
 
 
 Resources
@@ -130,20 +127,16 @@ Resources
 
 Website: https://siesta.works
 
-Github repo: https://github.com/bryntum/siesta
+Github repo: https://github.com/canonic-epicure/siesta
 
 Connect
 =======
 
 We welcome all feedback, so please let us know how we can improve your testing experience and reduce friction in your TDD cycle.
 
-Please report any bugs found and request features in the [issues tracker](https://github.com/bryntum/siesta/issues)
-
-Ask questions in the [forum](https://bryntum.com/forum/viewforum.php?f=20)
+Please report any bugs found and request features in the [issues tracker](https://github.com/canonic-epicure/siesta/issues)
 
 Chat live at [Discord](https://discord.gg/6mwJZGnwbq)
-
-Follow the [development blog](https://www.bryntum.com/blog/)
 
 
 Attribution
