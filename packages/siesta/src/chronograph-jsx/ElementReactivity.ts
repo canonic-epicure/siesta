@@ -40,6 +40,7 @@ export class ElementReactivity extends Mixin(
 
         classActivators         : Record<string, PropertySourceNormalized<boolean>> = undefined
         styleProperties         : Record<string, PropertySourceNormalized<string>>  = undefined
+        otherProperties         : Record<string, PropertySourceNormalized<unknown>> = undefined
 
         reactiveChildren        : ElementSourceNormalized[]     = undefined
 
@@ -82,6 +83,13 @@ export class ElementReactivity extends Mixin(
             if (!this.styleProperties) this.styleProperties = {}
 
             this.styleProperties[ propertyName ] = source
+        }
+
+
+        addOtherProperty (propertyName : string, source : PropertySourceNormalized<unknown>) {
+            if (!this.otherProperties) this.otherProperties = {}
+
+            this.otherProperties[ propertyName ] = source
         }
 
 
@@ -205,6 +213,34 @@ export class ElementReactivity extends Mixin(
         }
 
 
+        $otherPropertiesBoxes : BoxUnbound<unknown>[]       = undefined
+
+        get otherPropertiesBoxes () : BoxUnbound<unknown>[] {
+            if (this.$otherPropertiesBoxes !== undefined) return this.$otherPropertiesBoxes
+
+            const reactive : BoxUnbound<unknown>[]      = []
+
+            Object.entries(this.otherProperties || []).forEach(([ prop, source ]) => {
+                if (!isReactive(source)) {
+                    setProperty(this.el, prop, source)
+                }
+                else {
+                    const box       = CalculableBox.new({
+                        calculation : () => resolvePropertySource(source)
+                    })
+
+                    box.commitValueOptimisticHook.on(
+                        (self, newValue, oldValue) => setProperty(this.el, prop, newValue)
+                    )
+
+                    reactive.push(box)
+                }
+            })
+
+            return this.$otherPropertiesBoxes = reactive
+        }
+
+
         $effect : CalculableBox<Node[]>   = undefined
 
         get effect () : CalculableBox<Node[]> {
@@ -231,7 +267,8 @@ export class ElementReactivity extends Mixin(
                         this.classAttributeBox,
                         this.styleAttributeBox,
                         ...this.classActivatorBoxes,
-                        ...this.stylePropertiesBoxes
+                        ...this.stylePropertiesBoxes,
+                        ...this.otherPropertiesBoxes
                     ].forEach(box => box && box.read())
 
                     if (this.reactiveChildren) {
@@ -272,7 +309,9 @@ export class ElementReactivity extends Mixin(
             reactivity.adoptReactiveProperties(categorizedProperties)
 
             categorizedProperties.otherProperties.forEach(
-                ([ propertyName, value ]) => setProperty(element, propertyName, value)
+                ([ propertyName, value ]) => isReactive(value)
+                    ? reactivity.addOtherProperty(propertyName, value)
+                    : setProperty(element, propertyName, value)
             )
 
             if (normalizedChildren.hasReactivity) {
